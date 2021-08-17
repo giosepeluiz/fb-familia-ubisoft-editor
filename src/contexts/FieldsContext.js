@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createContext, useState } from "react";
 
 export const FieldsContext = createContext(["", () => {}]);
