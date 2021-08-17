@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FieldsContext } from "../contexts/FieldsContext";

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { faCopy, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useRef } from "react";
