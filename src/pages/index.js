@@ -30,6 +30,11 @@ export default function Home() {
       <Head>
         <title>Editor de publicações de Facebook - Giosepe Luiz</title>
         <meta name="description" content="Editor de publicações de Facebook" />
+        <meta property="og:title" content="Editor de publicações de Facebook - Giosepe Luiz" />
+        <meta property="og:description" content="Editor de publicações de Facebook" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://editor.arqueirover.de" />
+        <meta property="og:image" content="../images/og-social-banner.png" />
         <link rel="icon" href="/icons/favicon.ico" />
       </Head>
 
