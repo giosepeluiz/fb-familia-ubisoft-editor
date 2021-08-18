@@ -172,7 +172,7 @@
   line-height: 1.5;
 }
 
-.card button:hover {
+.card button:hover:not([disabled]) {
   color: #0070f3;
 }
 
