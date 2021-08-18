@@ -1,4 +1,4 @@
-/* eslint-disable */
+import { useContext } from "react";
 import {
   TextAreaField,
   TextField,
@@ -6,12 +6,10 @@ import {
   InfoField,
   AlertField,
   HashtagsField,
-} from "./../components/Fields";
-
-import styles from "../styles/Home.module.css";
-import { useContext, useState } from "react";
+} from "./Fields";
 import { ResultContext } from "../contexts/ResultContext";
-import { FieldsContext } from "./../contexts/FieldsContext";
+import { FieldsContext } from "../contexts/FieldsContext";
+import styles from "../styles/Home.module.css";
 
 /*
  * Verifica o tipo de elemento que será adicionado
@@ -45,12 +43,12 @@ const fieldType = (value) => {
  * Formulário a ser exibido.
  */
 const Form = () => {
-  const [result, setResult] = useContext(ResultContext);
+  const [, setResult] = useContext(ResultContext);
   const [fields, setFields] = useContext(FieldsContext);
 
   /* Excluir uma campo do vetor */
   const handleRemoveItem = (index) => {
-    let removeItem = [...fields];
+    const removeItem = [...fields];
     removeItem[index] = null;
     setFields(removeItem);
   };
@@ -62,14 +60,12 @@ const Form = () => {
     let i = 0;
 
     do {
-      let type = event.target[i].name;
-      let value = event.target[i].value;
-      let id = i;
+      const type = event.target[i].name;
+      const { value } = event.target[i];
 
       setResult((prevValue) => [...prevValue, { type, value }]);
-      i++;
+      i += 1;
     } while (i < event.target.length - 1);
-    return;
   };
 
   return (
@@ -78,10 +74,13 @@ const Form = () => {
         {/* Verifica de não existe nenhum elemento com "null", para ser ignorado */}
         {fields.map((field, index) =>
           field !== null ? (
-            <div key={index} className={styles.card}>
+            <div key={+index} className={styles.card}>
               {fieldType(field, index)}{" "}
               {index !== 0 ? (
                 <div
+                  aria-hidden="true"
+                  role="link"
+                  tabIndex={0}
                   onClick={() => handleRemoveItem(index)}
                   style={{
                     fontSize: "10px",

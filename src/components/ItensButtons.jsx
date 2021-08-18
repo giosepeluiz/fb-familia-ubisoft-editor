@@ -1,7 +1,5 @@
-/* eslint-disable */
-import styles from "../styles/Home.module.css";
+import { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FieldsContext } from "../contexts/FieldsContext";
 import {
   faAlignJustify,
   faExclamationTriangle,
@@ -10,7 +8,9 @@ import {
   faHeading,
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useState } from "react";
+import { FieldsContext } from "../contexts/FieldsContext";
+
+import styles from "../styles/Home.module.css";
 
 const ItensButtons = () => {
   const initialValue = "Escolha uma opção para editar...";

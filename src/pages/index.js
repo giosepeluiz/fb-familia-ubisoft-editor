@@ -1,13 +1,12 @@
-/* eslint-disable */
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { useEffect } from "react";
 import ItensButtons from "../components/ItensButtons";
 import Form from "../components/Form";
 import Result from "../components/Result";
 import { ResultProvider } from "../contexts/ResultContext";
 import { FieldsProvider } from "../contexts/FieldsContext";
-import { useEffect } from "react";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   /*
@@ -51,7 +50,8 @@ export default function Home() {
               <a
                 href="https://www.facebook.com/familiaubisoft"
                 target="_blank"
-                style={{ color: "#0070f3", fontWeight: "bold" }}>
+                style={{ color: "#0070f3", fontWeight: "bold" }}
+                rel="noreferrer">
                 Família Ubisoft
               </a>{" "}
               no Facebook.
@@ -85,14 +85,16 @@ export default function Home() {
         <a
           href="https://www.facebook.com/giosepeluiz"
           target="_blank"
-          style={{ fontWeight: "bold" }}>
+          style={{ fontWeight: "bold" }}
+          rel="noreferrer">
           Giosepe Luiz
         </a>{" "}
         |{" "}
         <a
           href="https://github.com/giosepeluiz/fb-familia-ubisoft-editor"
           target="_blank"
-          style={{ fontWeight: "bold" }}>
+          style={{ fontWeight: "bold" }}
+          rel="noreferrer">
           GitHub
         </a>
       </footer>

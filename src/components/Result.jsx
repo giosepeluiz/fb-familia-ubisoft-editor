@@ -1,10 +1,9 @@
-/* eslint-disable */
 import { faCopy, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { ResultContext } from "../contexts/ResultContext";
 import styles from "../styles/Home.module.css";
-import { FieldsContext } from "./../contexts/FieldsContext";
+import { FieldsContext } from "../contexts/FieldsContext";
 
 /*
  * Lista todos os itens formatados
@@ -55,8 +54,9 @@ const itemList = (array) => {
  * Copiar texto para a Área de Transferência
  */
 const copyToTextarea = () => {
-  let resultArea = document.getElementById("resultArea");
+  const resultArea = document.getElementById("resultArea");
   navigator.clipboard.writeText(resultArea.innerText);
+  /* eslint-disable-next-line */
   alert("Texto copiado para a Área de Transferência!");
 };
 
@@ -88,14 +88,15 @@ export default function Result() {
       {result.length !== 0 && (
         <div className={styles.card} id="resultArea">
           {result.map((item, index) => {
-            return item.value !== "" ? (
-              <span key={index}>
-                {itemList(item)}
-                <br />⠀<br />
-              </span>
-            ) : (
-              ""
-            );
+            if (item.value !== "") {
+              return (
+                <span key={+index}>
+                  {itemList(item)}
+                  <br />⠀<br />
+                </span>
+              );
+            }
+            return "";
           })}
         </div>
       )}
