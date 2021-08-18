@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import ItensButtons from "../components/ItensButtons";
 import Form from "../components/Form";
-import { Result } from "../components/Result";
+import Result from "../components/Result";
 import { ResultProvider } from "../contexts/ResultContext";
 import { FieldsProvider } from "../contexts/FieldsContext";
 import { useEffect } from "react";
@@ -17,12 +17,8 @@ export default function Home() {
     if (window !== undefined) {
       window.onbeforeunload = (event) => {
         const e = event || window.event;
-        // Cancel the event
         e.preventDefault();
-        if (e) {
-          e.returnValue = "";
-        }
-        return "";
+        return e ? e.returnValue : "";
       };
     }
   });

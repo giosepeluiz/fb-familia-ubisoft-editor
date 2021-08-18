@@ -232,7 +232,7 @@
   border-color: #0070f3;
 }
 
-.button:disabled {
+.button:disabled svg, .button-element:disabled svg {
   border-color: #999;
 }
 

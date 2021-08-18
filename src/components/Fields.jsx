@@ -1,7 +1,6 @@
-/* eslint-disable */
-import styles from "../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import styles from "../styles/Home.module.css";
 
 export function TitleField() {
   return (
@@ -9,7 +8,7 @@ export function TitleField() {
       className={styles.input}
       style={{ textTransform: "uppercase", fontWeight: "bold" }}
       type="text"
-      name={`title`}
+      name="title"
       placeholder="Insira o título"
       required
     />
@@ -21,7 +20,7 @@ export function TextField() {
     <input
       className={styles.input}
       type="text"
-      name={`text`}
+      name="text"
       placeholder="Insira uma linha"
       required
     />
@@ -30,12 +29,7 @@ export function TextField() {
 
 export function TextAreaField() {
   return (
-    <textarea
-      className={styles.textarea}
-      name={`textarea`}
-      placeholder="Insira um texto"
-      required
-    />
+    <textarea className={styles.textarea} name="textarea" placeholder="Insira um texto" required />
   );
 }
 
@@ -50,7 +44,7 @@ export function InfoField() {
         required
         className={styles.input}
         type="text"
-        name={`info`}
+        name="info"
         placeholder="Insira uma informação"
         style={{
           position: "relative",
@@ -74,7 +68,7 @@ export function AlertField() {
         required
         className={styles.input}
         type="text"
-        name={`alert`}
+        name="alert"
         placeholder="Insira um aviso de alerta"
         style={{
           position: "relative",
@@ -93,7 +87,7 @@ export function HashtagsField() {
       required
       className={styles.input}
       type="text"
-      name={`hashtags`}
+      name="hashtags"
       placeholder="Insira as hashtags com # na frente e separadas por espaço"
     />
   );
